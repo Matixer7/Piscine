@@ -3,28 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgumienn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:20:24 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/03 10:20:25 by mgumienn         ###   ########.fr       */
+/*   Updated: 2025/07/07 13:05:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int	i;
-	int				destlen;
-	char			*p;
+	int		i;
+	unsigned int		j;
+	char	*p;
+	char	*q;
 
 	p = dest;
-	destlen = 0;
-	while (*p++)
-		destlen++;
-	while (dest[destlen] && i < nb)
-	{
-		dest[destlen] = src[i];
-		destlen++;
+	q = src;
+	i = 0;
+	j = 0;
+	while (*p++ && src[0])
 		i++;
+	while (*q++ && j - 1 < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
 	return (dest);
 }
