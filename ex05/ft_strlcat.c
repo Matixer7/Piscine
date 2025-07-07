@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:21:02 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/07 19:45:06 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/07 19:57:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
-   unsigned int	i;
+	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
 	j = 0;
-    
+
 	while (dest[i])
-    i++;
-    if (i + sizeof(src) > size)
-        return(i + sizeof(src));
+	i++;
+	if (i + sizeof(src) > size)
+		return(i + sizeof(src));
 	while (src[j] != '\0')
 	{
 		dest[i] = src[j];
@@ -40,7 +40,6 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 	char	destination[17] = "Hello";
 	char	*src = source;
 	char	*dest = destination;
-	char	*p = dest;
 	int		i = 0;
 
 	

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:20:24 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/07 19:10:47 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/07 19:58:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	char	destination[] = "Hello";
 	char	*src = source;
 	char	*dest = destination;
-	char	*p = dest;
 	int		i = 0;
 
 	ft_strncat(dest, src, 3);
