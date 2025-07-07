@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:20:24 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/07 13:58:50 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/07 18:21:32 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,20 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
 	unsigned int	j;
-	char			*p;
+	char			x;
 
-	p = dest;
-	i = 0;
+	i = 1;
 	j = 0;
-	while (*p++ && src[0])
+	while (dest[i])
 		i++;
-	while (j < nb)
+	while (j < nb && src[j] != '\0')
 	{
-		dest[i] = src[j];
+		x = src[j];
+		dest[i] = x;
 		i++;
 		j++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 int	main(void) {
@@ -36,12 +37,13 @@ int	main(void) {
 	char	destination[] = "Hello";
 	char	*src = source;
 	char	*dest = destination;
+	char	*p = dest;
 	int		i = 0;
 
-	ft_strncat(dest, src, 10);
-	while (*dest++)
+	ft_strncat(dest, src, 3);
+	while (dest[i])
 	{
-		write(1, &destination[i], 1);
+		write(1, &dest[i], 1);
 		i++;
 	}
 	
