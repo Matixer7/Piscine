@@ -6,24 +6,24 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:20:24 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/07 13:07:09 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/07 13:58:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int		i;
-	unsigned int		j;
-	char	*p;
-	char	*q;
+	unsigned int	i;
+	unsigned int	j;
+	char			*p;
 
 	p = dest;
-	q = src;
 	i = 0;
 	j = 0;
 	while (*p++ && src[0])
 		i++;
-	while (j - 1 < nb)
+	while (j < nb)
 	{
 		dest[i] = src[j];
 		i++;
@@ -31,3 +31,19 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	}
 	return (dest);
 }
+int	main(void) {
+	char	source[] = " World";
+	char	destination[] = "Hello";
+	char	*src = source;
+	char	*dest = destination;
+	int		i = 0;
+
+	ft_strncat(dest, src, 10);
+	while (*dest++)
+	{
+		write(1, &destination[i], 1);
+		i++;
+	}
+	
+}
+
