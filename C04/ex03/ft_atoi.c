@@ -23,6 +23,8 @@ int ft_atoi(char *str)
     i = 0;
     if (odd_or_even(str) == 1)
         write(1, "-", 1);
+    while (str[i] == '-' || str[i] == '+')
+        i++;
     while (str[i] >= '0' && str[i] <= '9')
     {
         write(1, &str[i], 1);
