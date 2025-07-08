@@ -24,8 +24,9 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	n = 0;
-	while (str[i] == '-' || str[i] == '+')
-	i++;
+	while (str[i] == '-' || str[i] == '+' 
+		|| (str[i] <= '\r' && str[i] >= '\t') || str[i] == ' ')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		n = n * 10 + (str[i] - 48);
