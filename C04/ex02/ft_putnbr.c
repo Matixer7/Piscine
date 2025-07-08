@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-char    int_converter(int n, char *str)
+void    int_converter(int n, char *str)
 {
     static int  i;
 
