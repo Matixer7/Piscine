@@ -30,8 +30,8 @@ int ft_atoi(char *str)
     }
 }
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
     ft_atoi(argv[1]);
-    return 0;
+    return argc;
 }
