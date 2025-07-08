@@ -28,6 +28,7 @@ int ft_atoi(char *str)
         write(1, &str[i], 1);
         i++;
     }
+    return (0);
 }
 
 int main(int argc, char *argv[])
