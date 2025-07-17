@@ -13,26 +13,25 @@
 #include <unistd.h>
 #include <stdio.h>
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
 
 	i = 0;
 	j = 0;
-
-	while (dest[i])
-	i++;
-	if (i + sizeof(src) > size)
-		return(i + sizeof(src));
-	while (src[j] != '\0')
+	while (dest[j])
+		j++;
+	if (size <= sizeof(dest))
+		return (size + sizeof(src));
+	while (src[i] && j < size)
 	{
-		dest[i] = src[j];
+		dest[j] = src[i];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
-	return (sizeof(dest)); 
+	dest[j] = '\0';
+	return (sizeof(dest) + sizeof(src));
 }
 
 /*int	main(void) {

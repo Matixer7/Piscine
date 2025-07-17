@@ -1,36 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mgumienn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/09 15:56:16 by mgumienn          #+#    #+#             */
+/*   Updated: 2025/07/09 15:56:21 by mgumienn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void    int_converter(int n, char *str)
+void	ft_putnbr(int nb)
 {
-    static int  i;
+	char	c;
 
-    if (n < 0)
-    {
-        str[i] = '-';
-        i++;
-        n = -n;
-    }
-    if ((n / 10) > 0)
-        int_converter(n / 10, str);
-    str[i++] = (n % 10) + '0';
-    str[i] = '\0';
-}
-void    ft_putnbr(int nb)
-{
-    int     x;
-    char    str[11];
-    char        *p;
-
-    p = str;
-    x = 0;
-    int_converter(nb, p);
-    while (str[x])
-        x++;
-    write(1, str, x);
+	if (nb < 0)
+		write(1, "-", 1);
+	if (nb / 10 != 0)
+		ft_putnbr((nb / 10) * ((nb > 0) - (nb < 0)));
+	c = '0' + (nb % 10) * ((nb > 0) - (nb < 0));
+	write(1, &c, 1);
 }
 
-/*int main(void)
+/* int main(void)
 {
-    ft_putnbr(-2147483647);
-    return 0;
-}*/
+	ft_putnbr(-2147483648);
+	return 0;
+} */

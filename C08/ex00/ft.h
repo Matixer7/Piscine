@@ -1,31 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgumienn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 15:56:07 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/09 15:56:09 by mgumienn         ###   ########.fr       */
+/*   Created: 2025/07/13 20:35:28 by mgumienn          #+#    #+#             */
+/*   Updated: 2025/07/13 20:35:58 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	write(1, str, i);
-}
-
-/*int main(void)
-{
-	ft_putstr("Hello my guy!");
-	return 0;
-}*/
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);

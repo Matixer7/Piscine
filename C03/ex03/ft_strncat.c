@@ -14,14 +14,14 @@
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int	i;
-	unsigned int	j;
+	unsigned int		i;
+	unsigned int		j;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	while (dest[i])
 		i++;
-	while (j < nb && src[j] != '\0')
+	while (src[j] && j < nb)
 	{
 		dest[i] = src[j];
 		i++;
@@ -31,14 +31,14 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	return (dest);
 }
 /*int	main(void) {
-	char	source[] = " World";
+	char	source[] = "World";
 	char	destination[] = "Hello";
 	char	*src = source;
 	char	*dest = destination;
 	int		i = 0;
 
-	ft_strncat(dest, src, 3);
-	while (dest[i])
+	ft_strncat(dest, src, 5);
+	while (dest[i] != '\0')
 	{
 		write(1, &dest[i], 1);
 		i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mgumienn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 10:20:06 by mgumienn          #+#    #+#             */
-/*   Updated: 2025/07/07 18:51:15 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/03 10:20:08 by mgumienn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@ char	*ft_strcat(char *dest, char *src)
 {
 	int		i;
 	int		j;
-	char	*p;
-	char	*q;
 
-	p = dest;
-	q = src;
 	i = 0;
 	j = 0;
-	while (*p++ && src[0])
+	while (dest[i] != '\0')
 		i++;
-	while (*q++)
+	while (src[j] != '\0')
 	{
 		dest[i] = src[j];
 		i++;
 		j++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
